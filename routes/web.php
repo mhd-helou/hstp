@@ -19,8 +19,10 @@ Route::get('/', function () {
 
 Route::get('sendmail', [\App\Http\Controllers\MailController::class, 'sendEmail']);
 
-Route::post('booleanText',function (\Illuminate\Http\Request $request) {
-    if ($request = 1)
+
+Route::get('boolean/{val}',function ($val) {
+    if ($val == 1) {
         return 'true';
-    else return 'false';
+    }
+    return 'false';
 });
