@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -25,4 +25,15 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
     Route::apiResource('titles', \App\Http\Controllers\Api\TitleController::class);
     Route::apiResource('chairs', \App\Http\Controllers\Api\ChairController::class);
     Route::apiResource('invitations', \App\Http\Controllers\Api\InvitationController::class);
+});
+
+Route::post('/boolean', function (\Illuminate\Http\Request $request) {
+    $value = $request->input('value');
+    DB::table('bool')->update(['booleano' => $value]);
+    return 'Value saved successfully!';
+
+});
+Route::get('/boolean', function () {
+    $value = DB::table('bool')->value('booleano');
+    return response()->json(['value' => $value]);
 });
