@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Chair extends Model
 {
     use HasFactory;
-    protected $fillable = ['class','grade','status'];
+    protected $fillable = ['class','grade','status', 'invitation_id'];
+    public function invitation()
+    {
+        return $this->belongsTo(Invitation::class);
+    }
 }

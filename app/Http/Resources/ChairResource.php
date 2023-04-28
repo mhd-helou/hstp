@@ -14,12 +14,14 @@ class ChairResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return [
+    /*    return [
             'id'=>$this->id,
             'class'=>$this->class,
             'grade'=>$this->grade,
             'status'=> $this->status,
-        ];
-        //return parent::toArray($request);
+            'invitation_id'=> $this->invitation_id,
+        ];*/
+
+        return parent::toArray($request);
     }
 }

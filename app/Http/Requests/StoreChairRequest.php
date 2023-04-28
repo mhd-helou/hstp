@@ -25,6 +25,7 @@ class StoreChairRequest extends FormRequest
             'class' => 'required',
             'grade' =>'required',
             'status'=>'required',
+            'invitation_id'=> 'sometimes|nullable',
         ];
     }
 }

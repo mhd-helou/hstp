@@ -36,7 +36,6 @@ class StoreInvitationRequest extends FormRequest
             'honor_title'=> 'sometimes|nullable',
             'title_id'=> 'required',
             'category_id'=> 'required',
-            'chair_id'=> 'required',
         ];
     }
 }
