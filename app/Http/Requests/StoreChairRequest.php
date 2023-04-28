@@ -23,6 +23,7 @@ class StoreChairRequest extends FormRequest
     {
         return [
             'class' => 'required',
+            'grade' =>'required',
             'status'=>'required',
         ];
     }

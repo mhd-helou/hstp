@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function index()
     {
         //return CategoryResource::collection(Category::all());
-        return CategoryResource::collection(Category::select('id', 'name')->get());
+        return CategoryResource::collection(Category::select('id', 'name', 'color')->get());
     }
     /**
      * Store a newly created resource in storage.

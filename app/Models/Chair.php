@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Chair extends Model
 {
     use HasFactory;
-    protected $fillable = ['class', 'status'];
+    protected $fillable = ['class','grade','status'];
 }

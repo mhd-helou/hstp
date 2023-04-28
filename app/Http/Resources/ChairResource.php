@@ -17,6 +17,7 @@ class ChairResource extends JsonResource
         return [
             'id'=>$this->id,
             'class'=>$this->class,
+            'grade'=>$this->grade,
             'status'=> $this->status,
         ];
         //return parent::toArray($request);

@@ -24,18 +24,19 @@ class StoreInvitationRequest extends FormRequest
         return [
             'full_name'=> 'required',
             'whatsapp_num'=> 'required',
-            //'is_whatsapp'=> 'required',
+            'is_whatsapp'=> 'required',
             'email'=> 'required',
             'sec_email'=> 'required',
             'authority'=> 'required',
             'position'=> 'required',
-            //'is_attendant'=> 'required',
+            'is_attendant'=> 'required',
             'req_status'=> 'required',
             'lang'=>'required',
-            //'date'=> 'required',
-            //'title_id'=> 'required',
-            //'category_id'=> 'required',
-            //'chair_id'=> 'required',
+            'date'=> 'required',
+            'honor_title'=> 'sometimes|nullable',
+            'title_id'=> 'required',
+            'category_id'=> 'required',
+            'chair_id'=> 'required',
         ];
     }
 }

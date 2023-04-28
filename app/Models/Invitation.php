@@ -11,7 +11,7 @@ class Invitation extends Model
     protected $fillable = ['full_name', 'whatsapp_num', 'is_whatsapp',
                            'email', 'sec_email', 'authority',
                            'position', 'is_attendant', 'req_status',
-                           'lang', 'date', 'title_id', 'category_id', 'chair_id'];
+                           'lang', 'date','honor_title', 'title_id', 'category_id', 'chair_id'];
     public function chair(){
         return $this->belongsTo(Chair::class);
     }
