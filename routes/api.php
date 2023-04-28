@@ -29,11 +29,11 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
 
 Route::post('/boolean', function (\Illuminate\Http\Request $request) {
     $value = $request->input('value');
-    DB::table('bool')->update(['booleano' => $value]);
-    return 'Value saved successfully!';
-
+    DB::table('booleano')->update(['booleano' => $value]);
+    return response()->json(['value' => $value, 'message'=>'Value updated successfully!']);
 });
+
 Route::get('/boolean', function () {
-    $value = DB::table('bool')->value('booleano');
+    $value = DB::table('booleano')->value('booleano');
     return response()->json(['value' => $value]);
 });
