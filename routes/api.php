@@ -26,13 +26,12 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
     Route::apiResource('chairs', \App\Http\Controllers\Api\ChairController::class);
     Route::apiResource('invitations', \App\Http\Controllers\Api\InvitationController::class);
 });
-
+Route::apiResource('invitations', \App\Http\Controllers\Api\InvitationController::class)->middleware('web');
 Route::post('/boolean', function (\Illuminate\Http\Request $request) {
     $value = $request->input('value');
     DB::table('booleano')->update(['booleano' => $value]);
     return response()->json(['value' => $value, 'message'=>'Value updated successfully!']);
 });
-
 Route::get('/boolean', function () {
     $value = DB::table('booleano')->value('booleano');
     return response()->json(['value' => $value]);

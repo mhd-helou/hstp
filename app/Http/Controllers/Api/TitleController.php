@@ -15,7 +15,7 @@ class TitleController extends Controller
     public function index()
     {
         //return TitleResource::collection(Title::all());
-        return TitleResource::collection(Title::select('id', 'name', 'lang')->get());
+        return TitleResource::collection(Title::select('id', 'name', 'lang')->paginate(2,['*'], 'page'));
     }
 
     /**

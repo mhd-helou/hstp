@@ -32,6 +32,8 @@ class StoreInvitationRequest extends FormRequest
             'is_attendant'=> 'required',
             'req_status'=> 'required',
             'lang'=>'required',
+            'is_confirmed'=>'required',
+            'is_internal'=>'required',
             'date'=> 'required',
             'honor_title'=> 'sometimes|nullable',
             'title_id'=> 'required',

@@ -20,7 +20,7 @@ class InvitationController extends Controller
     {
         //return CategoryResource::collection(Category::all());
         return InvitationResource::collection(
-            Invitation::with('category', 'title')->get());
+            Invitation::with('category', 'title')->paginate(2,['*'], 'page'));
     }
 
     /**

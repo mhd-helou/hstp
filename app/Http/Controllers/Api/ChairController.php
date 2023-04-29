@@ -16,7 +16,7 @@ class ChairController extends Controller
     public function index()
     {
         //return ChairResource::collection(Chair::all());
-        return ChairResource::collection(Chair::with('invitation')->get());
+        return ChairResource::collection(Chair::with('invitation')->paginate(2,['*'], 'page'));
 
     }
 

@@ -10,7 +10,7 @@ class Invitation extends Model
     use HasFactory;
     protected $fillable = ['full_name', 'whatsapp_num', 'is_whatsapp',
                            'email', 'sec_email', 'authority',
-                           'position', 'is_attendant', 'req_status',
+                           'position', 'is_attendant','is_confirmed','is_internal','req_status',
                            'lang', 'date','honor_title', 'title_id', 'category_id'];
   /*  public function invitation(){
         return $this->hasOne(Chair::class);
