@@ -11,6 +11,8 @@ class Chair extends Model
     protected $fillable = ['class','grade','status', 'invitation_id'];
     public function invitation()
     {
-        return $this->belongsTo(Invitation::class);
+        return $this->belongsTo(Invitation::class)->withDefault([
+            'full_name' => ''
+        ]);
     }
 }

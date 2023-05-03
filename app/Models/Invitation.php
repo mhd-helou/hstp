@@ -21,4 +21,12 @@ class Invitation extends Model
     public function title(){
         return $this->belongsTo(Title::class);
     }
+        public function chair()
+        {
+            return $this->hasOne(Chair::class)->withDefault([
+                'class'=>  '',
+                'grade'=> '',
+                'status'=> ''
+            ]);
+        }
 }

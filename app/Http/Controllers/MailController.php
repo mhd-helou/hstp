@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreInvitationRequest;
 use App\Mail\SendMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -9,14 +10,15 @@ use Illuminate\Support\Facades\Mail;
 class MailController extends Controller
 {
     //
-    public function sendEmail()
+    public function sendEmail(StoreInvitationRequest $request, $email, $full_name)
     {
-        $title = 'Greetings Mr, And HappyEid!';
+
+        $title = 'Greetings, This email format is being prepared by the DEVVELOPER';
         $customer_details = [
-            'name' => 'AlaaMhanna',
-            'address' => 'TartusCity',
+            'name' => $full_name,
+            'address' => 'KSA',
             'phone' => '0932131321',
-            'email' => 'mohammed1helou@gmail.com'
+            'email' => $email
         ];
 
         $sendmail = Mail::to($customer_details['email'])->send(new SendMail($title, $customer_details));

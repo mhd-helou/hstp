@@ -7,6 +7,7 @@ use App\Http\Requests\StoreChairRequest;
 use App\Http\Resources\ChairResource;
 use App\Models\Chair;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ChairController extends Controller
 {
@@ -15,9 +16,10 @@ class ChairController extends Controller
      */
     public function index()
     {
-        //return ChairResource::collection(Chair::all());
-        return ChairResource::collection(Chair::with('invitation')->paginate(2,['*'], 'page'));
-
+       /* return ChairResource::collection(Chair::all());*/
+      //  return ChairResource::collection(Chair::with('invitation')->paginate(2,['*'], 'page'));
+       //return Chair::all();
+        return Chair::with('invitation')->get();
     }
 
     /**

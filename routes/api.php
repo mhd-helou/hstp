@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
     Route::apiResource('invitations', \App\Http\Controllers\Api\InvitationController::class);
 });
 Route::apiResource('invitations', \App\Http\Controllers\Api\InvitationController::class)->middleware('web');
+
 Route::post('/boolean', function (\Illuminate\Http\Request $request) {
     $value = $request->input('value');
     DB::table('booleano')->update(['booleano' => $value]);

@@ -19,4 +19,4 @@ Route::get('/', function () {
 
 Route::get('sendmail', [\App\Http\Controllers\MailController::class, 'sendEmail']);
 
-
+//Route::post('invitations', \App\Http\Controllers\Api\InvitationController::class);
